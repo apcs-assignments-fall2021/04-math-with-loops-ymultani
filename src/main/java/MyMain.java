@@ -30,21 +30,24 @@ public class MyMain {
 
     }
 
-    // Could not figure out how to do it
-    public static double babylonian(double x) {
-        double n = 41;
-        double m = 0;
-        while(Math.abs(x-m) > 0.0000001){
-
+    public static double babylonian(double x){
+        double z = x;
+        double a= 1;
+        while(z-a>0.000001){
+            z = (z+a)/2;
+            a = x/z;
         }
-
+        return z;
     }
     
     
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a double value: ");
+        double dub = scan.nextDouble();
+        babylonian(dub);
+        calculateE();
 
-        // YOUR CODE HERE
 
 
         
